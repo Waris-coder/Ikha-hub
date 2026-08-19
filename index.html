@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>IKHA HUB</title>
+
+<style>
+
+body {
+    background-color: #0b0b0b;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #111111;
+    padding: 30px;
+    border-bottom: 3px solid cyan;
+    box-shadow: 0 0 20px cyan;
+}
+
+header h1 {
+    color: cyan;
+    font-size: 48px;
+    margin: 10px;
+}
+
+header p {
+    font-size: 19px;
+}
+
+.box {
+    background-color: #181818;
+    max-width: 950px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #333333;
+}
+
+h2 {
+    color: cyan;
+}
+
+input {
+    width: 70%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid cyan;
+    background-color: #222222;
+    color: white;
+    font-size: 18px;
+    outline: none;
+}
+
+button {
+    background-color: cyan;
+    color: black;
+    border: none;
+    padding: 13px 22px;
+    margin: 8px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+}
+
+.character-buttons {
+    margin-top: 20px;
+}
+
+#result {
+    background-color: #222222;
+    margin-top: 25px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid cyan;
+    box-shadow: 0 0 20px cyan;
+    text-align: left;
+}
+
+#result h2 {
+    text-align: center;
+    font-size: 32px;
+}
+
+.info {
+    background-color: #2b2b2b;
+    padding: 18px;
+    margin: 14px 0;
+    border-radius: 12px;
+    line-height: 1.7;
+}
+
+.info strong {
+    color: cyan;
+}
+
+footer {
+    background-color: #111111;
+    padding: 30px;
+    margin-top: 40px;
+    border-top: 2px solid cyan;
+}
+
+footer h2 {
+    color: cyan;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>IKHA HUB</h1>
+
+<p>Anime Character Database</p>
+
+</header>
+
+
+<div class="box">
+
+<h2>Character Search</h2>
+
+<p>Search for one of the 9 characters below.</p>
+
+<input
+type="text"
+id="searchBox"
+placeholder="Itachi, Naruto, Gojo..."
+>
+
+<br>
+
+<button onclick="searchCharacter()">Search</button>
+
+<button onclick="clearSearch()">Clear</button>
+
+
+<div class="character-buttons">
+
+<button onclick="quickSearch('Itachi')">
+Itachi Uchiha
+</button>
+
+<button onclick="quickSearch('Naruto')">
+Naruto Uzumaki
+</button>
+
+<button onclick="quickSearch('Sasuke')">
+Sasuke Uchiha
+</button>
+
+<button onclick="quickSearch('Madara')">
+Madara Uchiha
+</button>
+
+<button onclick="quickSearch('Kakashi')">
+Kakashi Hatake
+</button>
+
+<button onclick="quickSearch('Gojo')">
+Gojo Satoru
+</button>
+
+<button onclick="quickSearch('Sukuna')">
+Sukuna
+</button>
+
+<button onclick="quickSearch('Ichigo')">
+Ichigo Kurosaki
+</button>
+
+<button onclick="quickSearch('L')">
+L
+</button>
+
+</div>
+
+
+<div id="result">
+
+<h2>IKHA Character Database</h2>
+
+<p style="text-align:center;">
+Search for a character above.
+</p>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<h2>IKHA HUB</h2>
+
+<p>Character Stories • Powers • Information</p>
+
+<p>Created by IKHA</p>
+
+<p>© 2026 IKHA HUB</p>
+
+</footer>
+
+
+<script>
+
+
+function searchCharacter() {
+
+    var name = document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
+
+    showCharacter(name);
+
+}
+
+
+function quickSearch(name) {
+
+    document.getElementById("searchBox").value = name;
+
+    showCharacter(name.toLowerCase());
+
+}
+
+
+function showCharacter(name) {
+
+    var result = document.getElementById("result");
+
+
+/* ITACHI */
+
+if (
+    name === "itachi" ||
+    name === "itachi uchiha"
+) {
+
+result.innerHTML = `
+
+<h2>Itachi Uchiha</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: Itachi Uchiha<br>
+Clan: Uchiha Clan<br>
+Village: Konohagakure<br>
+Role: Shinobi, ANBU and Akatsuki member
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+Itachi Uchiha was a gifted shinobi of the Uchiha Clan.
+From a very young age, he understood the terrible cost
+of war and violence.
+
+Itachi loved his younger brother Sasuke and wanted to
+protect him above everything else.
+
+As tensions grew between the Uchiha Clan and Konoha,
+Itachi became trapped in an extremely difficult situation.
+He eventually made a painful decision that changed his
+entire life and his relationship with Sasuke.
+
+Itachi then became an enemy in Sasuke's eyes.
+He allowed Sasuke to hate him because he wanted his
+younger brother to survive and become strong.
+
+Later, Itachi joined the Akatsuki and lived as a dangerous
+criminal in the eyes of the world.
+
+Eventually, Itachi fought Sasuke. After Itachi's death,
+Sasuke slowly discovered the truth behind Itachi's actions.
+
+Itachi's story is mainly about sacrifice, family,
+brotherly love and the difficult choices of a shinobi.
+
+</div>
+
+
+<div class="info">
+
+<strong>Powers:</strong><br><br>
+
+Sharingan<br>
+Mangekyo Sharingan<br>
+Tsukuyomi<br>
+Amaterasu<br>
+Susanoo<br>
+Powerful Genjutsu<br>
+Excellent Shurikenjutsu
+
+</div>
+
+`;
+
+}
+
+
+/* NARUTO */
+
+else if (
+    name === "naruto" ||
+    name === "naruto uzumaki"
+) {
+
+result.innerHTML = `
+
+<h2>Naruto Uzumaki</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: Naruto Uzumaki<br>
+Clan: Uzumaki Clan<br>
+Village: Konohagakure<br>
+Goal: Become Hokage
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+Naruto Uzumaki grew up feeling lonely and unwanted.
+The Nine-Tailed Fox was sealed inside him when he
+was a baby, causing many villagers to fear him.
+
+Naruto dreamed of becoming Hokage so that everyone
+would recognize and respect him.
+
+After graduating from the Academy, Naruto became a
+member of Team 7 with Sasuke Uchiha and Sakura Haruno,
+under the leadership of Kakashi Hatake.
+
+At first Naruto was inexperienced and often acted
+without thinking. However, through training, missions
+and difficult battles, he became a powerful shinobi.
+
+Naruto formed strong bonds with many people and learned
+that true strength also comes from protecting friends.
+
+He eventually learned to control and cooperate with
+the power of Kurama.
+
+During the Fourth Great Ninja War, Naruto became one
+of the most important fighters on the battlefield.
+
+His journey is the story of a lonely child who grows
+into a respected hero and eventually achieves his dream
+of becoming Hokage.
+
+</div>
+
+
+<div class="info">
+
+<strong>Powers:</strong><br><br>
+
+Shadow Clone Jutsu<br>
+Rasengan<br>
+Sage Mode<br>
+Kurama Chakra<br>
+Huge Chakra Reserves<br>
+Six Paths abilities
+
+</div>
+
+`;
+
+}
+
+
+/* SASUKE */
+
+else if (
+    name === "sasuke" ||
+    name === "sasuke uchiha"
+) {
+
+result.innerHTML = `
+
+<h2>Sasuke Uchiha</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: Sasuke Uchiha<br>
+Clan: Uchiha Clan<br>
+Village: Konohagakure<br>
+Main Goal: Defeat Itachi
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+Sasuke Uchiha was born into the famous Uchiha Clan.
+As a child, he admired his older brother Itachi.
+
+Everything changed when Sasuke witnessed the destruction
+of his clan.
+
+From that moment, Sasuke became determined to become
+strong enough to defeat Itachi.
+
+He later joined Team 7 with Naruto and Sakura.
+Although Sasuke slowly developed friendships with them,
+his desire for revenge remained extremely strong.
+
+Sasuke eventually left Konoha because he wanted more
+power.
+
+He trained under Orochimaru and became much stronger.
+
+Later, Sasuke finally fought Itachi. After Itachi died,
+Sasuke learned the hidden truth behind his brother's
+actions.
+
+This changed Sasuke's goals and his view of the world.
+
+He eventually became involved in the Fourth Great Ninja
+War and developed his own vision for the future of the
+shinobi world.
+
+His rivalry with Naruto eventually led to a final
+confrontation between the two.
+
+</div>
+
+
+<div class="info">
+
+<strong>Powers:</strong><br><br>
+
+Sharingan<br>
+Mangekyo Sharingan<br>
+Rinnegan<br>
+Chidori<br>
+Susanoo<br>
+Fire Style Jutsu
+
+</div>
+
+`;
+
+}
+
+
+/* MADARA */
+
+else if (
+    name === "madara" ||
+    name === "madara uchiha"
+) {
+
+result.innerHTML = `
+
+<h2>Madara Uchiha</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: Madara Uchiha<br>
+Clan: Uchiha Clan<br>
+Role: Legendary Shinobi<br>
+Rival: Hashirama Senju
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+Madara Uchiha was one of the strongest members of the
+Uchiha Clan.
+
+As a child, he met Hashirama Senju. The two became
+friends despite belonging to rival clans.
+
+Both dreamed of creating a world where children would
+not have to die in wars.
+
+Later, the Uchiha and Senju clans joined together and
+created Konohagakure.
+
+However, Madara eventually became suspicious that the
+peace would not last.
+
+His disagreement with Hashirama grew stronger and the
+two became legendary rivals.
+
+Madara continued developing his power and created plans
+that would influence events far into the future.
+
+During the Fourth Great Ninja War, Madara returned as
+one of the greatest threats the shinobi world had ever
+faced.
+
+His goal was to create a world where everyone could
+experience an artificial form of peace.
+
+Madara's story focuses on power, friendship, war and
+his own extreme idea of peace.
+
+</div>
+
+
+<div class="info">
+
+<strong>Powers:</strong><br><br>
+
+Sharingan<br>
+Eternal Mangekyo Sharingan<br>
+Rinnegan<br>
+Perfect Susanoo<br>
+Wood Style abilities<br>
+Ten-Tails power
+
+</div>
+
+`;
+
+}
+
+
+/* KAKASHI */
+
+else if (
+    name === "kakashi" ||
+    name === "kakashi hatake"
+) {
+
+result.innerHTML = `
+
+<h2>Kakashi Hatake</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: Kakashi Hatake<br>
+Village: Konohagakure<br>
+Role: Jonin and Team 7 Teacher<br>
+Nickname: Copy Ninja Kakashi
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+Kakashi Hatake was a talented shinobi from a very
+young age.
+
+His father, Sakumo Hatake, was a famous ninja.
+Kakashi lost his father when he was young, which
+strongly affected his personality.
+
+Kakashi later became part of Team Minato with
+Obito Uchiha and Rin Nohara.
+
+During a dangerous mission, Obito gave Kakashi his
+Sharingan before being separated from him.
+
+The Sharingan became an important part of Kakashi's
+fighting style.
+
+Kakashi later served in the ANBU and completed many
+dangerous missions.
+
+He eventually became the teacher of Team 7, training
+Naruto, Sasuke and Sakura.
+
+During the Fourth Great Ninja War, Kakashi played an
+important role in protecting his comrades.
+
+After the war, Kakashi became the Sixth Hokage.
+
+His story is about loss, friendship, teamwork and
+protecting the next generation.
+
+</div>
+
+
+<div class="info">
+
+<strong>Powers:</strong><br><br>
+
+Sharingan<br>
+Chidori / Raikiri<br>
+Kamui<br>
+Lightning Style<br>
+Copy Ninja techniques<br>
+Excellent Battle Strategy
+
+</div>
+
+`;
+
+}
+
+
+/* GOJO */
+
+else if (
+    name === "gojo" ||
+    name === "gojo satoru" ||
+    name === "satoru gojo"
+) {
+
+result.innerHTML = `
+
+<h2>Gojo Satoru</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: Satoru Gojo<br>
+Series: Jujutsu Kaisen<br>
+Role: Special Grade Sorcerer<br>
+Main Abilities: Six Eyes and Limitless
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+Satoru Gojo is one of the most powerful sorcerers
+in the Jujutsu Kaisen world.
+
+He possesses two extremely rare abilities:
+the Six Eyes and Limitless.
+
+During his student years, Gojo was close friends
+with Suguru Geto.
+
+The two experienced several dangerous missions
+together.
+
+A major incident involving Riko Amanai changed
+Gojo's life and his relationship with Geto.
+
+As an adult, Gojo became a teacher at Jujutsu High.
+
+He wanted to train a new generation of sorcerers
+and help them become strong enough to survive the
+dangerous world of jujutsu.
+
+Gojo is extremely confident, intelligent and powerful.
+
+Although he can defeat many enemies by himself,
+he also believes that changing the next generation
+is important for the future of the jujutsu world.
+
+</div>
+
+
+<div class="info">
+
+<strong>Powers:</strong><br><br>
+
+Six Eyes<br>
+Limitless<br>
+Infinity<br>
+Blue<br>
+Red<br>
+Hollow Purple<br>
+Unlimited Void
+
+</div>
+
+`;
+
+}
+
+
+/* SUKUNA */
+
+else if (
+    name === "sukuna" ||
+    name === "ryomen sukuna"
+) {
+
+result.innerHTML = `
+
+<h2>Ryomen Sukuna</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: Ryomen Sukuna<br>
+Series: Jujutsu Kaisen<br>
+Title: King of Curses<br>
+Type: Ancient Sorcerer / Cursed Being
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+Ryomen Sukuna is an ancient and extremely powerful
+figure in the world of Jujutsu Kaisen.
+
+He is known as the King of Curses.
+
+Stories about Sukuna have existed for a very long time,
+and his name became associated with fear and destruction.
+
+His power was preserved through cursed fingers.
+
+When Yuji Itadori becomes connected to Sukuna's cursed
+power, Sukuna's presence returns to the modern world.
+
+Sukuna is ruthless, confident and extremely selfish.
+
+He does not follow normal rules and cares mostly about
+his own desires.
+
+His enormous cursed energy and battle intelligence make
+him one of the most dangerous beings in the series.
+
+Sukuna's fighting ability and cursed techniques allow
+him to defeat extremely powerful opponents.
+
+</div>
+
+
+<div class="info">
+
+<strong>Powers:</strong><br><br>
+
+Cursed Energy<br>
+Cleave<br>
+Dismantle<br>
+Shrine<br>
+Malevolent Shrine<br>
+Reverse Cursed Technique<br>
+Extreme Combat Ability
+
+</div>
+
+`;
+
+}
+
+
+/* ICHIGO */
+
+else if (
+    name === "ichigo" ||
+    name === "ichigo kurosaki"
+) {
+
+result.innerHTML = `
+
+<h2>Ichigo Kurosaki</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: Ichigo Kurosaki<br>
+Series: Bleach<br>
+Role: Substitute Soul Reaper<br>
+Weapon: Zanpakuto
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+Ichigo Kurosaki could see spirits from a young age.
+
+His life changed when he met Rukia Kuchiki, a Soul
+Reaper.
+
+After a dangerous incident, Ichigo received Soul
+Reaper powers.
+
+He then began protecting ordinary people from Hollows.
+
+At first, Ichigo had very little understanding of the
+spiritual world.
+
+As he became stronger, he became involved in conflicts
+between Soul Reapers, Hollows and other powerful groups.
+
+Ichigo repeatedly fought stronger enemies and continued
+discovering new parts of his own identity.
+
+He eventually learned that his powers were connected
+to several different spiritual origins.
+
+Throughout his journey, Ichigo's main motivation remained
+the protection of his family and friends.
+
+His story is about courage, identity, friendship and
+the responsibility that comes with great power.
+
+</div>
+
+
+<div class="info">
+
+<strong>Powers:</strong><br><br>
+
+Zanpakuto<br>
+Shikai<br>
+Bankai<br>
+Getsuga Tensho<br>
+Hollow Powers<br>
+Quincy Powers<br>
+Fullbring Abilities
+
+</div>
+
+`;
+
+}
+
+
+/* L */
+
+else if (
+    name === "l" ||
+    name === "lawliet" ||
+    name === "l lawliet"
+) {
+
+result.innerHTML = `
+
+<h2>L Lawliet</h2>
+
+<div class="info">
+
+<strong>Basic Information:</strong><br>
+
+Name: L Lawliet<br>
+Series: Death Note<br>
+Role: Detective<br>
+Specialty: Deduction and Investigation
+
+</div>
+
+
+<div class="info">
+
+<strong>Story:</strong><br><br>
+
+L is one of the greatest detectives in the Death Note
+world.
+
+Unlike most powerful characters, L does not depend on
+physical strength.
+
+His greatest weapon is his intelligence.
+
+When the mysterious killer known as Kira begins
+killing criminals, L starts investigating the case.
+
+L studies clues, behavior and patterns to determine
+who Kira might be.
+
+His investigation eventually brings him close to
+Light Yagami.
+
+L begins to suspect that Light may be connected to Kira.
+
+A psychological battle develops between L and Light.
+
+Both characters use intelligence, deception and strategy
+to try to discover each other's secrets.
+
+L continues investigating even when the situation becomes
+extremely dangerous.
+
+His story is mainly about deduction, logic, observation
+and psychological warfare.
+
+</div>
+
+
+<div class="info">
+
+<strong>Skills:</strong><br><br>
+
+Genius-Level Deduction<br>
+Observation<br>
+Logical Reasoning<br>
+Investigation<br>
+Psychological Analysis<br>
+Strategic Thinking
+
+</div>
+
+`;
+
+}
+
+
+/* CHARACTER NOT FOUND */
+
+else {
+
+result.innerHTML = `
+
+<h2>Character Not Found</h2>
+
+<p style="text-align:center;">
+Only these 9 characters are available:
+</p>
+
+<div class="info">
+
+Itachi Uchiha<br>
+Naruto Uzumaki<br>
+Sasuke Uchiha<br>
+Madara Uchiha<br>
+Kakashi Hatake<br>
+Gojo Satoru<br>
+Sukuna<br>
+Ichigo Kurosaki<br>
+L
+
+</div>
+
+`;
+
+}
+
+}
+
+
+function clearSearch() {
+
+document.getElementById("searchBox").value = "";
+
+document.getElementById("result").innerHTML = `
+
+<h2>IKHA Character Database</h2>
+
+<p style="text-align:center;">
+Search for a character above.
+</p>
+
+`;
+
+}
+
+
+</script>
+
+
+</body>
+</html>
