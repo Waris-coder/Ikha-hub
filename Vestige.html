@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vestige Health</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7f5;
+    color:#222;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:white;
+    box-shadow:0 3px 15px rgba(0,0,0,.12);
+}
+
+.navbar{
+    max-width:1450px;
+    margin:auto;
+    padding:12px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#087443;
+    color:white;
+
+    font-weight:bold;
+    font-size:16px;
+}
+
+.logo-text{
+    font-size:21px;
+    font-weight:bold;
+    color:#087443;
+}
+
+.logo-text span{
+    color:#e59a16;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+
+    font-size:13px;
+    font-weight:bold;
+
+    margin:4px 7px;
+}
+
+nav a:hover{
+    color:#087443;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:560px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #075b36,
+        #17955e
+    );
+
+    color:white;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-logo{
+    width:110px;
+    height:110px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:white;
+    color:#087443;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-top:20px;
+}
+
+.hero h1 span{
+    color:#ffd36b;
+}
+
+.hero p{
+    margin-top:12px;
+    line-height:1.7;
+    font-size:18px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+
+    margin-top:28px;
+}
+
+.main-button{
+    padding:14px 25px;
+    border-radius:9px;
+
+    text-decoration:none;
+    color:white;
+
+    font-weight:bold;
+}
+
+.instagram{
+    background:#c13584;
+}
+
+.whatsapp{
+    background:#25d366;
+}
+
+.main-button:hover{
+    opacity:.85;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section{
+    max-width:900px;
+    margin:auto;
+
+    padding:50px 20px 20px;
+
+    text-align:center;
+}
+
+.search-section h2{
+    color:#087443;
+    margin-bottom:15px;
+}
+
+#searchBox{
+    width:100%;
+
+    padding:16px;
+
+    border:1px solid #ccc;
+    border-radius:10px;
+
+    font-size:16px;
+    outline:none;
+}
+
+#searchBox:focus{
+    border-color:#087443;
+}
+
+#resultCount{
+    margin-top:12px;
+    color:#777;
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.main-category{
+    max-width:1450px;
+    margin:auto;
+
+    padding:65px 20px;
+}
+
+.category-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.category-heading h2{
+    color:#087443;
+    font-size:38px;
+}
+
+.category-heading p{
+    margin-top:8px;
+    color:#666;
+}
+
+/* =========================
+   SUBCATEGORY
+========================= */
+
+.subcategory{
+    margin-bottom:55px;
+}
+
+.subcategory-heading{
+    background:white;
+
+    border-left:6px solid #087443;
+
+    border-radius:8px;
+
+    padding:15px 18px;
+
+    margin-bottom:22px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+
+.subcategory-heading h3{
+    color:#087443;
+    font-size:25px;
+}
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(270px,1fr));
+
+    gap:20px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card{
+    background:white;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 4px 16px rgba(0,0,0,.08);
+
+    transition:.2s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 9px 25px rgba(0,0,0,.14);
+}
+
+/* NO PRODUCT PHOTO */
+
+.product-info-box{
+    min-height:145px;
+
+    padding:22px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eaf7ef,
+        #f7fbf8
+    );
+
+    border-bottom:1px solid #e2eee6;
+}
+
+.about-label{
+    color:#087443;
+
+    font-size:12px;
+    font-weight:bold;
+
+    letter-spacing:.5px;
+
+    margin-bottom:9px;
+}
+
+.product-info-box p{
+    color:#555;
+
+    line-height:1.55;
+
+    font-size:14px;
+}
+
+/* =========================
+   PRODUCT CONTENT
+========================= */
+
+.product-content{
+    padding:19px;
+}
+
+.product-content h4{
+    font-size:18px;
+    line-height:1.4;
+
+    margin-bottom:10px;
+
+    color:#222;
+}
+
+.category-label{
+    display:inline-block;
+
+    background:#e8f5ed;
+    color:#087443;
+
+    padding:5px 8px;
+
+    border-radius:5px;
+
+    font-size:11px;
+    font-weight:bold;
+
+    margin-bottom:12px;
+}
+
+/* =========================
+   PRODUCT BUTTONS
+========================= */
+
+.product-buttons{
+    display:flex;
+    gap:8px;
+
+    margin-top:17px;
+}
+
+.product-buttons a{
+    flex:1;
+
+    text-align:center;
+
+    padding:11px 5px;
+
+    border-radius:7px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:12px;
+    font-weight:bold;
+}
+
+.ask-instagram{
+    background:#c13584;
+}
+
+.call-whatsapp{
+    background:#25d366;
+}
+
+.product-buttons a:hover{
+    opacity:.85;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    max-width:1000px;
+
+    margin:20px auto 60px;
+
+    padding:20px;
+}
+
+.about h2{
+    color:#087443;
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.about-box{
+    background:white;
+
+    padding:30px;
+
+    border-radius:14px;
+
+    line-height:1.8;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.07);
+}
+
+/* =========================
+   JOIN
+========================= */
+
+.join{
+    background:
+    linear-gradient(
+        135deg,
+        #075b36,
+        #15945c
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:75px 20px;
+}
+
+.join h2{
+    font-size:40px;
+
+    margin-bottom:15px;
+}
+
+.join p{
+    max-width:750px;
+
+    margin:auto;
+
+    line-height:1.7;
+}
+
+.join-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#17231d;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+footer p{
+    margin:8px;
+
+    color:#ccc;
+}
+
+footer a{
+    color:white;
+
+    text-decoration:none;
+}
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.whatsapp-float{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#25d366;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.25);
+
+    z-index:2000;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .product-buttons{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+
+<div class="logo-circle">
+VH
+</div>
+
+<div class="logo-text">
+Vestige <span>Health</span>
+</div>
+
+</div>
+
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#health">Health Care</a>
+
+<a href="#personal">Personal Care</a>
+
+<a href="#oral">Oral Care</a>
+
+<a href="#food">Health Food</a>
+
+<a href="#homecare">Home Care</a>
+
+<a href="#women">Women Hygiene</a>
+
+<a href="#agri">Agri</a>
+
+<a href="#brands">Brands</a>
+
+<a href="#business">Business Tools</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-logo">
+VH
+</div>
+
+<h1>
+Vestige <span>Health</span>
+</h1>
+
+<p>
+Explore products by category and subcategory.
+</p>
+
+<p>
+For current prices, availability and product enquiries,
+contact us directly.
+</p>
+
+<div class="hero-buttons">
+
+<a
+class="main-button instagram"
+href="https://www.instagram.com/Vestige_with.shabana/"
+target="_blank">
+
+Ask on Instagram
+
+</a>
+
+<a
+class="main-button whatsapp"
+href="https://wa.me/919007286145"
+target="_blank">
+
+Call on WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<section class="search-section">
+
+<h2>
+Find a Product
+</h2>
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search product name..."
+onkeyup="searchProducts()">
+
+<div id="resultCount">
+Loading products...
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CATALOG
+===================================================== -->
+
+<div id="catalog"></div>
+
+
+<!-- =====================================================
+     JOIN
+===================================================== -->
+
+<section class="join">
+
+<h2>
+Want to Join?
+</h2>
+
+<p>
+For joining information, product enquiries,
+current prices and availability, contact us directly.
+</p>
+
+<div class="join-buttons">
+
+<a
+class="main-button whatsapp"
+href="https://wa.me/919007286145?text=Hello%2C%20I%20want%20information%20about%20joining%20Vestige."
+target="_blank">
+
+Call on WhatsApp for Join
+
+</a>
+
+<a
+class="main-button instagram"
+href="https://www.instagram.com/Vestige_with.shabana/"
+target="_blank">
+
+Ask on Instagram
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about">
+
+<h2>
+About Vestige Health
+</h2>
+
+<div class="about-box">
+
+<p>
+<strong>Vestige Health</strong> is an independent product
+information and enquiry website.
+</p>
+
+<br>
+
+<p>
+Products are organized into main categories and separate
+subcategories so visitors can find products more easily.
+</p>
+
+<br>
+
+<p>
+Prices and MRP are not displayed on this website.
+Please contact us for current pricing and availability.
+</p>
+
+<br>
+
+<p>
+Product information should always be checked against the
+current official product information before purchasing.
+</p>
+
+<br>
+
+<p>
+<strong>Notice:</strong>
+This website is not the official corporate website of
+Vestige Marketing Pvt. Ltd.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<p>
+<strong>Vestige Health</strong>
+</p>
+
+<p>
+Product Information • Product Enquiries • Contact
+</p>
+
+<p>
+
+<a
+href="https://www.instagram.com/Vestige_with.shabana/"
+target="_blank">
+
+Instagram:
+Vestige_with.shabana
+
+</a>
+
+</p>
+
+<p>
+
+<a
+href="https://wa.me/919007286145"
+target="_blank">
+
+WhatsApp:
+9007286145
+
+</a>
+
+</p>
+
+<p>
+© 2026 Vestige Health
+</p>
+
+</footer>
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a
+class="whatsapp-float"
+href="https://wa.me/919007286145"
+target="_blank"
+title="Call on WhatsApp">
+
+?
+
+</a>
+
+
+<script>
+
+/* =====================================================
+   CONTACT INFORMATION
+===================================================== */
+
+const INSTAGRAM =
+"https://www.instagram.com/Vestige_with.shabana/";
+
+const WHATSAPP =
+"https://wa.me/919007286145";
+
+
+/* =====================================================
+   PRODUCT DATA
+
+   MAIN CATEGORY
+       ?
+   SUBCATEGORY
+       ?
+   PRODUCT
+       ?
+   ABOUT PRODUCT
+===================================================== */
+
+const catalog = [
+
+/* =====================================================
+   HEALTH CARE
+===================================================== */
+
+{
+    main:"Health Care",
+    id:"health",
+
+    subcategories:[
+
+        {
+            name:"Vestige Prime",
+
+            products:[
+
+                {
+                    name:"Vestige Prime Energy Booster",
+                    about:"A product from the Vestige Prime range. Contact us for the current product information, price and availability."
+                },
+
+                {
+                    name:"Vestige Prime Absorvit Vitamin B12 Sublingual Spray",
+                    about:"A Vitamin B12 product in the Vestige Prime range. Contact us for current product details and availability."
+                },
+
+                {
+                    name:"Vestige Prime Absorvit Vitamin C Sublingual Spray",
+                    about:"A Vitamin C product in the Vestige Prime range. Contact us for current product details and availability."
+                },
+
+                {
+                    name:"Vestige Prime Absorvit Vitamin D Sublingual Spray",
+                    about:"A Vitamin D product in the Vestige Prime range. Contact us for current product details and availability."
+                },
+
+                {
+                    name:"Vestige Prime Combiotics",
+                    about:"A product from the Vestige Prime wellness range. Ask us for current product information."
+                },
+
+                {
+                    name:"Vestige Prime Krill Oil",
+                    about:"A krill-oil based product from the Vestige Prime range. Ask for current details and availability."
+                },
+
+                {
+                    name:"Vestige Prime Metamind",
+                    about:"A product from the Vestige Prime range. Contact us for current product information."
+                },
+
+                {
+                    name:"Vestige Prime Sea Buckthorn",
+                    about:"A Sea Buckthorn product from the Vestige Prime range. Contact us for current information."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Joints & Bones",
+
+            products:[
+
+                {
+                    name:"Vestige Glucosamine",
+                    about:"A glucosamine product from the Vestige health range. Contact us for current product details."
+                },
+
+                {
+                    name:"Vestige Calcium",
+                    about:"A calcium-focused nutritional product. Ask us for current product information and availability."
+                },
+
+                {
+                    name:"Vestige Collagen",
+                    about:"A collagen nutritional product. Contact us for current details and price."
+                },
+
+                {
+                    name:"Vestige Veg Collagen with Rose",
+                    about:"A collagen product from the Vestige range. Ask for current information and availability."
+                },
+
+                {
+                    name:"Vestige HMB",
+                    about:"A nutritional product containing HMB. Contact us for current product information."
+                },
+
+                {
+                    name:"Vestige Joint Support",
+                    about:"A product listed for the joint-support category. Ask us for current official product information."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Fitness & Diet",
+
+            products:[
+
+                {
+                    name:"Vestige Veslim Cell Power",
+                    about:"A product from the Veslim range. Contact us for current product information and availability."
+                },
+
+                {
+                    name:"Vestige Veslim Cell-U-Lean",
+                    about:"A product from the Veslim range. Ask for current product information."
+                },
+
+                {
+                    name:"Vestige Veslim Tea",
+                    about:"A tea product from the Veslim range. Contact us for current details."
+                },
+
+                {
+                    name:"Invigo Nutritional Protein Powder",
+                    about:"A nutritional protein product from the Invigo range. Contact us for current product details."
+                },
+
+                {
+                    name:"Vestige L-Arginine",
+                    about:"A nutritional product containing L-Arginine. Ask us for current official information."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Multi Vitamins",
+
+            products:[
+
+                {
+                    name:"Vestige Multivitamin",
+                    about:"A multivitamin nutritional product. Contact us for current product information."
+                },
+
+                {
+                    name:"Vestige Vitamin B12",
+                    about:"A Vitamin B12 nutritional product. Ask us for current details."
+                },
+
+                {
+                    name:"Vestige Vitamin C",
+                    about:"A Vitamin C nutritional product. Contact us for current product information."
+                },
+
+                {
+                    name:"Vestige Vitamin D",
+                    about:"A Vitamin D nutritional product. Ask us for current details."
+                },
+
+                {
+                    name:"Vestige Folic & Iron Plus",
+                    about:"A nutritional product containing folic acid and iron. Contact us for current information."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Women's Health",
+
+            products:[
+
+                {
+                    name:"Vestige Her Own",
+                    about:"A product from the Vestige women's health range. Contact us for current product information."
+                },
+
+                {
+                    name:"Vestige Shatavari Max",
+                    about:"A Shatavari-based product from the Vestige range. Ask us for current details."
+                },
+
+                {
+                    name:"Vestige Folic & Iron Plus",
+                    about:"A nutritional product containing folic acid and iron. Contact us for current information."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Detox & Rejuvenation",
+
+            products:[
+
+                {
+                    name:"Vestige Aloe Vera",
+                    about:"An Aloe Vera product from the Vestige range. Contact us for current product details."
+                },
+
+                {
+                    name:"Vestige Amla",
+                    about:"An Amla-based product from the Vestige range. Ask us for current information."
+                },
+
+                {
+                    name:"Vestige Noni",
+                    about:"A Noni-based product from the Vestige range. Contact us for current product details."
+                },
+
+                {
+                    name:"Vestige Neem",
+                    about:"A Neem-based product from the Vestige range. Ask us for current details."
+                },
+
+                {
+                    name:"Vestige Spirulina",
+                    about:"A Spirulina nutritional product. Contact us for current product information."
+                },
+
+                {
+                    name:"Vestige Ganoderma",
+                    about:"A Ganoderma product from the Vestige range. Ask us for current information."
+                },
+
+                {
+                    name:"Vestige Curcumin Plus",
+                    about:"A Curcumin-focused nutritional product. Contact us for current product details."
+                },
+
+                {
+                    name:"Vestige Cranberry",
+                    about:"A cranberry-based product from the Vestige range. Ask for current information."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+
+/* =====================================================
+   PERSONAL CARE
+===================================================== */
+
+{
+    main:"Personal Care",
+    id:"personal",
+
+    subcategories:[
+
+        {
+            name:"Hair Care",
+
+            products:[
+
+                {
+                    name:"Assure Hair Oil",
+                    about:"A hair-care oil from the Assure range. Contact us for current product information."
+                },
+
+                {
+                    name:"Assure Deep Cleanse Shampoo",
+                    about:"A shampoo from the Assure hair-care range. Ask us for current details."
+                },
+
+                {
+                    name:"Assure Daily Care Shampoo",
+                    about:"A daily hair-care shampoo from the Assure range."
+                },
+
+                {
+                    name:"Assure Moisture Rich Shampoo",
+                    about:"A moisturising shampoo from the Assure range. Contact us for current information."
+                },
+
+                {
+                    name:"Assure Keratin Smoothening Shampoo",
+                    about:"A shampoo from the Assure hair-care range. Ask us for current details."
+                },
+
+                {
+                    name:"Assure Hair Serum",
+                    about:"A hair serum from the Assure range. Contact us for current product information."
+                },
+
+                {
+                    name:"Assure Hair Conditioner",
+                    about:"A conditioner from the Assure hair-care range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Skin Care",
+
+            products:[
+
+                {
+                    name:"Assure Vitamin C Facial Foam",
+                    about:"A facial cleansing product from the Assure skin-care range."
+                },
+
+                {
+                    name:"Assure Vitamin C Gel Creme",
+                    about:"A skin-care product from the Assure Vitamin C range."
+                },
+
+                {
+                    name:"Assure Insta Glow Facial Kit",
+                    about:"A facial-care kit from the Assure range."
+                },
+
+                {
+                    name:"Assure BB Cream",
+                    about:"A BB cream from the Assure personal-care range."
+                },
+
+                {
+                    name:"Assure Anti Ageing Night Cream",
+                    about:"A night cream from the Assure skin-care range."
+                },
+
+                {
+                    name:"Assure Face Scrub",
+                    about:"A face-care exfoliating product from the Assure range."
+                },
+
+                {
+                    name:"Assure Aloe Cucumber Aquagel",
+                    about:"An aquagel product from the Assure skin-care range."
+                },
+
+                {
+                    name:"Assure Sun Defense",
+                    about:"A sun-care product from the Assure range. Ask for current product information."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Body Care",
+
+            products:[
+
+                {
+                    name:"Assure Soap",
+                    about:"A bathing soap from the Assure personal-care range."
+                },
+
+                {
+                    name:"Assure Body Wash",
+                    about:"A body-wash product from the Assure range."
+                },
+
+                {
+                    name:"Assure Body Polish",
+                    about:"A body-care product from the Assure range."
+                },
+
+                {
+                    name:"Assure Hand & Body Lotion",
+                    about:"A lotion for hand and body care from the Assure range."
+                },
+
+                {
+                    name:"Assure Hand Wash",
+                    about:"A hand-wash product from the Assure range."
+                },
+
+                {
+                    name:"Assure Foot Cream",
+                    about:"A foot-care cream from the Assure range."
+                },
+
+                {
+                    name:"Assure Active Deo",
+                    about:"A deodorant product from the Assure range."
+                },
+
+                {
+                    name:"Assure Rapture Deo",
+                    about:"A deodorant product from the Assure range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Men's Grooming",
+
+            products:[
+
+                {
+                    name:"Assure Shaving Cream",
+                    about:"A shaving-care product from the Assure grooming range."
+                },
+
+                {
+                    name:"Assure Arctic Perfume Spray",
+                    about:"A fragrance spray from the Assure range."
+                },
+
+                {
+                    name:"Assure Pulse Perfume Spray",
+                    about:"A fragrance spray from the Assure range."
+                },
+
+                {
+                    name:"Assure Aura Perfume Spray",
+                    about:"A fragrance spray from the Assure range."
+                },
+
+                {
+                    name:"Assure Premium Bleu",
+                    about:"A fragrance product from the Assure Premium range."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+
+/* =====================================================
+   ORAL CARE
+===================================================== */
+
+{
+    main:"Oral Care",
+    id:"oral",
+
+    subcategories:[
+
+        {
+            name:"Dentassure",
+
+            products:[
+
+                {
+                    name:"Dentassure Toothpaste",
+                    about:"A toothpaste product from the Dentassure oral-care range."
+                },
+
+                {
+                    name:"Dentassure Gano Toothpaste",
+                    about:"A toothpaste product from the Dentassure range."
+                },
+
+                {
+                    name:"Dentassure Mouth Wash",
+                    about:"A mouthwash product from the Dentassure oral-care range."
+                },
+
+                {
+                    name:"Dentassure Toothbrush",
+                    about:"A toothbrush product from the Dentassure range."
+                }
+
+            ]
+        },
+
+        {
+            name:"Daily Oral Care",
+
+            products:[
+
+                {
+                    name:"Dentassure Daily Oral Care",
+                    about:"A daily oral-care product from the Dentassure range."
+                },
+
+                {
+                    name:"Dentassure Freshness Care",
+                    about:"An oral-care product from the Dentassure range."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+
+/* =====================================================
+   HEALTH FOOD
+===================================================== */
+
+{
+    main:"Health Food",
+    id:"food",
+
+    subcategories:[
+
+        {
+            name:"Zeta",
+
+            products:[
+
+                {
+                    name:"Zeta Premium Coffee",
+                    about:"A coffee product from the Zeta range."
+                },
+
+                {
+                    name:"Zeta Premium Spice Tea",
+                    about:"A tea product from the Zeta range."
+                },
+
+                {
+                    name:"Zeta Special Tea",
+                    about:"A tea product from the Zeta range."
+                },
+
+                {
+                    name:"Zeta Green Tea",
+                    about:"A green-tea product from the Zeta range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Invigo",
+
+            products:[
+
+                {
+                    name:"Invigo Nutritional Protein Powder",
+                    about:"A nutritional protein product from the Invigo range."
+                },
+
+                {
+                    name:"Invigo Freshnup Drink",
+                    about:"A beverage product from the Invigo range."
+                },
+
+                {
+                    name:"Invigo Health Drops Panch Tulsi Ark",
+                    about:"A Panch Tulsi Ark product from the Invigo range."
+                },
+
+                {
+                    name:"Invigo Daily Nutrition",
+                    about:"A nutritional product from the Invigo range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Enerva",
+
+            products:[
+
+                {
+                    name:"Enerva Protein Snack Bar",
+                    about:"A snack product from the Enerva range."
+                },
+
+                {
+                    name:"Enerva Choco-Flaxseed Bar",
+                    about:"A snack bar product from the Enerva range."
+                },
+
+                {
+                    name:"Enerva Hi-Nutrition Breakfast Cereal",
+                    about:"A breakfast cereal product from the Enerva range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Lite House",
+
+            products:[
+
+                {
+                    name:"Lite House Rice Bran Oil",
+                    about:"A cooking-oil product from the Lite House range."
+                },
+
+                {
+                    name:"Lite House Olive Pomace Oil",
+                    about:"An olive pomace oil product from the Lite House range."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+
+/* =====================================================
+   HOME CARE
+===================================================== */
+
+{
+    main:"Home Care",
+    id:"homecare",
+
+    subcategories:[
+
+        {
+            name:"Cleaning Care",
+
+            products:[
+
+                {
+                    name:"Hyvest Ultra Swab Floor Cleaner",
+                    about:"A floor-cleaning product from the Hyvest home-care range."
+                },
+
+                {
+                    name:"Hyvest New Ultra Shine Glass Cleaner",
+                    about:"A glass-cleaning product from the Hyvest range."
+                },
+
+                {
+                    name:"Hyvest Ultra Guard Toilet Cleanser",
+                    about:"A toilet-cleaning product from the Hyvest range."
+                },
+
+                {
+                    name:"Hyvest Ultra Scrub Dishwashing Liquid",
+                    about:"A dishwashing product from the Hyvest range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Laundry Care",
+
+            products:[
+
+                {
+                    name:"Hyvest Ultra Matic",
+                    about:"A laundry-care product from the Hyvest range."
+                },
+
+                {
+                    name:"Hyvest Ultra Wash",
+                    about:"A laundry-care product from the Hyvest range."
+                },
+
+                {
+                    name:"Hyvest Ultra Protek",
+                    about:"A home and laundry-care product from the Hyvest range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Kitchen Care",
+
+            products:[
+
+                {
+                    name:"Hyvest Ultra Scrub Dishwashing Liquid",
+                    about:"A dishwashing liquid from the Hyvest kitchen-care range."
+                },
+
+                {
+                    name:"Hyvest Kitchen Care",
+                    about:"A home-care product for kitchen cleaning and care."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+
+/* =====================================================
+   WOMEN HYGIENE
+===================================================== */
+
+{
+    main:"Women Hygiene",
+    id:"women",
+
+    subcategories:[
+
+        {
+            name:"DewGarden",
+
+            products:[
+
+                {
+                    name:"DewGarden Sanitary Napkin",
+                    about:"A feminine-hygiene product from the DewGarden range."
+                },
+
+                {
+                    name:"DewGarden Panty Liner",
+                    about:"A feminine-hygiene product from the DewGarden range."
+                },
+
+                {
+                    name:"DewGarden Daily Hygiene",
+                    about:"A personal-hygiene product from the DewGarden range."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+
+/* =====================================================
+   AGRI
+===================================================== */
+
+{
+    main:"Agri",
+    id:"agri",
+
+    subcategories:[
+
+        {
+            name:"Agriculture Products",
+
+            products:[
+
+                {
+                    name:"Vestige Agri82",
+                    about:"An agriculture product from the Vestige Agri range. Contact us for current product information."
+                },
+
+                {
+                    name:"Vestige AGRI-HUMIC",
+                    about:"An agriculture product from the Vestige Agri range."
+                },
+
+                {
+                    name:"Agri Humic Granules",
+                    about:"An agriculture product from the Vestige Agri range."
+                },
+
+                {
+                    name:"Agri Aquagel",
+                    about:"An agriculture product from the Vestige Agri range."
+                },
+
+                {
+                    name:"Vestige Agri Nanotek",
+                    about:"An agriculture product from the Vestige Agri range."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+
+/* =====================================================
+   PREMIUM BRANDS
+===================================================== */
+
+{
+    main:"Premium Brands",
+    id:"brands",
+
+    subcategories:[
+
+        {
+            name:"Skin Formula 9",
+
+            products:[
+
+                {
+                    name:"Skin Formula 9 Youth Elixir Lotion",
+                    about:"A skin-care product from the Skin Formula 9 range."
+                },
+
+                {
+                    name:"Skin Formula 9 Intense Hydration Cream",
+                    about:"A skin-care cream from the Skin Formula 9 range."
+                },
+
+                {
+                    name:"Skin Formula 9 Brightening Treatment Cream",
+                    about:"A skin-care product from the Skin Formula 9 range."
+                },
+
+                {
+                    name:"Skin Formula 9 Deep Cleansing Oil",
+                    about:"A cleansing product from the Skin Formula 9 range."
+                },
+
+                {
+                    name:"Skin Formula 9 Blemish Gel",
+                    about:"A skin-care gel from the Skin Formula 9 range."
+                },
+
+                {
+                    name:"Skin Formula 9 Under Eye Serum",
+                    about:"An under-eye skin-care product from the Skin Formula 9 range."
+                },
+
+                {
+                    name:"Skin Formula 9 Repair Sleeping Mask",
+                    about:"A sleeping-mask product from the Skin Formula 9 range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Mistral of Milan",
+
+            products:[
+
+                {
+                    name:"Mistral of Milan Star Light Lipstick",
+                    about:"A lipstick product from the Mistral of Milan cosmetics range."
+                },
+
+                {
+                    name:"Mistral of Milan Ultra Stay Nail Lacquer",
+                    about:"A nail-colour product from the Mistral of Milan range."
+                },
+
+                {
+                    name:"Mistral of Milan Ultra Define Lip Liner",
+                    about:"A lip-liner product from the Mistral of Milan range."
+                }
+
+            ]
+        },
+
+
+        {
+            name:"Truman",
+
+            products:[
+
+                {
+                    name:"Truman Face Wash",
+                    about:"A face-wash product from the Truman personal-care range."
+                },
+
+                {
+                    name:"Truman Deodorant",
+                    about:"A deodorant product from the Truman range."
+                },
+
+                {
+                    name:"Truman Bathing Bar",
+                    about:"A bathing-bar product from the Truman range."
+                },
+
+                {
+                    name:"Truman Grooming",
+                    about:"A grooming product from the Truman personal-care range."
+                }
+
+            ]
+        }
+
+    ]
+},
+
+
+/* =====================================================
+   BUSINESS TOOLS
+===================================================== */
+
+{
+    main:"Business Tools",
+    id:"business",
+
+    subcategories:[
+
+        {
+            name:"Business Materials",
+
+            products:[
+
+                {
+                    name:"Product Catalogue",
+                    about:"Business material used for viewing product information."
+                },
+
+                {
+                    name:"Health Guide",
+                    about:"Informational material related to product and wellness information."
+                },
+
+                {
+                    name:"Health Prospectus",
+                    about:"Informational business material."
+                },
+
+                {
+                    name:"Business Guide",
+                    about:"Business-related informational material."
+                },
+
+                {
+                    name:"Online Shopping Guide",
+                    about:"Guide material related to online product shopping."
+                }
+
+            ]
+        }
+
+    ]
+}
+
+];
+
+
+/* =====================================================
+   WHATSAPP LINK
+===================================================== */
+
+function createWhatsAppLink(productName){
+
+    const message =
+    "Hello, I want to know the current price and availability of " +
+    productName + ".";
+
+    return WHATSAPP +
+    "?text=" +
+    encodeURIComponent(message);
+
+}
+
+
+/* =====================================================
+   SAFE HTML
+===================================================== */
+
+function safeText(text){
+
+    return text
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   COUNT PRODUCTS
+===================================================== */
+
+function getTotalProducts(){
+
+    let total = 0;
+
+    catalog.forEach(category => {
+
+        category.subcategories.forEach(subcategory => {
+
+            total += subcategory.products.length;
+
+        });
+
+    });
+
+    return total;
+
+}
+
+
+/* =====================================================
+   CREATE PRODUCT CARD
+===================================================== */
+
+function createProductCard(
+    product,
+    category,
+    subcategory
+){
+
+    return `
+
+    <article
+    class="product-card"
+    data-product="${safeText(product.name.toLowerCase())}">
+
+        <div class="product-info-box">
+
+            <div class="about-label">
+                ABOUT THIS PRODUCT
+            </div>
+
+            <p>
+                ${safeText(product.about)}
+            </p>
+
+        </div>
+
+
+        <div class="product-content">
+
+            <span class="category-label">
+                ${safeText(subcategory)}
+            </span>
+
+            <h4>
+                ${safeText(product.name)}
+            </h4>
+
+
+            <div class="product-buttons">
+
+                <a
+                class="ask-instagram"
+                href="${INSTAGRAM}"
+                target="_blank">
+
+                    Ask on Instagram
+
+                </a>
+
+
+                <a
+                class="call-whatsapp"
+                href="${createWhatsAppLink(product.name)}"
+                target="_blank">
+
+                    Call on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    `;
+
+}
+
+
+/* =====================================================
+   BUILD CATALOG
+===================================================== */
+
+function buildCatalog(){
+
+    const catalogContainer =
+    document.getElementById("catalog");
+
+    let html = "";
+
+
+    catalog.forEach(category => {
+
+        html += `
+
+        <section
+        class="main-category"
+        id="${category.id}">
+
+            <div class="category-heading">
+
+                <h2>
+                    ${safeText(category.main)}
+                </h2>
+
+                <p>
+                    Explore ${safeText(category.main)}
+                    products by subcategory.
+                </p>
+
+            </div>
+
+        `;
+
+
+        category.subcategories.forEach(subcategory => {
+
+            html += `
+
+            <div
+            class="subcategory">
+
+                <div class="subcategory-heading">
+
+                    <h3>
+                        ${safeText(subcategory.name)}
+                    </h3>
+
+                </div>
+
+
+                <div class="products">
+
+            `;
+
+
+            subcategory.products.forEach(product => {
+
+                html += createProductCard(
+                    product,
+                    category.main,
+                    subcategory.name
+                );
+
+            });
+
+
+            html += `
+
+                </div>
+
+            </div>
+
+            `;
+
+        });
+
+
+        html += `
+
+        </section>
+
+        `;
+
+    });
+
+
+    catalogContainer.innerHTML = html;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchProducts(){
+
+    const search =
+    document
+    .getElementById("searchBox")
+    .value
+    .toLowerCase()
+    .trim();
+
+
+    const productCards =
+    document.querySelectorAll(".product-card");
+
+
+    const subcategories =
+    document.querySelectorAll(".subcategory");
+
+
+    const mainCategories =
+    document.querySelectorAll(".main-category");
+
+
+    let found = 0;
+
+
+    productCards.forEach(card => {
+
+        const productName =
+        card
+        .getAttribute("data-product");
+
+
+        if(
+            search === "" ||
+            productName.includes(search)
+        ){
+
+            card.style.display = "";
+
+            found++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    subcategories.forEach(section => {
+
+        const visibleProducts =
+        section.querySelectorAll(
+            ".product-card:not([style*='display: none'])"
+        );
+
+
+        if(
+            search === "" ||
+            visibleProducts.length > 0
+        ){
+
+            section.style.display = "";
+
+        }else{
+
+            section.style.display = "none";
+
+        }
+
+    });
+
+
+    mainCategories.forEach(category => {
+
+        const visibleSections =
+        category.querySelectorAll(
+            ".subcategory:not([style*='display: none'])"
+        );
+
+
+        if(
+            search === "" ||
+            visibleSections.length > 0
+        ){
+
+            category.style.display = "";
+
+        }else{
+
+            category.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("resultCount").innerText =
+    search === ""
+    ? "Showing all " + getTotalProducts() + " products"
+    : found + " product(s) found";
+
+}
+
+
+/* =====================================================
+   START WEBSITE
+===================================================== */
+
+buildCatalog();
+
+
+document.getElementById("resultCount").innerText =
+"Showing all " +
+getTotalProducts() +
+" products";
+
+</script>
+
+</body>
+</html>
